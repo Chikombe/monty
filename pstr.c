@@ -8,7 +8,7 @@
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
-	void line_number;
+	(void) line_number;
 
 
 	if (!stack || !*stack)
@@ -21,7 +21,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	{
 		if (temp->n == 0)
 			break;
-		if (!isascii((temp)->n))
+		if (!_isascii((temp)->n))
 			break;
 		putchar(temp->n);
 		temp = temp->next;

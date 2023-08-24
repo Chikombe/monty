@@ -8,13 +8,13 @@ vars var;
  * @argv: pointer to array of arguments
  * Return: on success 0, otherwise 1
  */
-int main(int argc, char argv)
+int main(int argc, char **argv)
 {
 	char *opcode;
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n")
+		fprintf(stderr, "USAGE: monty file\n");
 			return (EXIT_FAILURE);
 	}
 

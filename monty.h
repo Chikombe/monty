@@ -66,10 +66,12 @@ typedef struct glob_var
 } vars;
 
 
-extren vars var;
+extern vars var;
 
+int _isascii(int c);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int var_init(vars *var);
-instruction_t *create_new_func()
+instruction_t *create_new_func();
 int execute_func(vars *var, char *opcode);
 void all_free(void);
 int _isdigit(char *str);
@@ -80,7 +82,7 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
+void divi(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);

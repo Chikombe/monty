@@ -10,13 +10,13 @@ int execute_func(vars *var, char *opcode)
 {
 	int i;
 
-	for (i = 0; var.dict[i].opcode; i++)
-		if (strcmp(opcode, var.dict[i].opcode) == 0)
+	for (i = 0; var->dict[i].opcode; i++)
+		if (strcmp(opcode, var->dict[i].opcode) == 0)
 		{
-			if (!var.dict[i].f)
+			if (!var->dict[i].f)
 				return (EXIT_SUCCESS);
 		}
-	if (strlen(opcode) != 0 && opcode[0] != #)
+	if (strlen(opcode) != 0 && opcode[0] != '#')
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 				var->line_number, opcode);

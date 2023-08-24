@@ -21,7 +21,7 @@ instruction_t *create_new_func()
 	ptr[5].opcode = "add", ptr[5].f = add;
 	ptr[6].opcode = "nop", ptr[6].f = NULL;
 	ptr[7].opcode = "sub", ptr[7].f = sub;
-	ptr[8].opcode = "div", ptr[8].f = div;
+	ptr[8].opcode = "div", ptr[8].f = divi;
 	ptr[9].opcode = "mul", ptr[9].f = mul;
 	ptr[10].opcode = "mod", ptr[10].f = mod;
 	ptr[11].opcode = "pchar", ptr[11].f = pchar;
