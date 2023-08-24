@@ -1,56 +1,56 @@
 #include "monty.h"
 
 /**
- * rotl - s
- * @stack: Double linked list
- * @line_number: File line execution
+ * rotl - rotates the stack to the top
+ * @stack: pointer to double linked list
+ * @line_number: the file line for execution
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tm = *stack;
+	stack_t *tmp = *stack;
 	(void) line_number;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return;
 	(*stack)->next->prev = NULL;
-	while (tm->next)
-		tm = tm->next;
-	tm->next = *stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = *stack;
 	(*stack) = (*stack)->next;
-	tm->next->next = NULL;
-	tm->next->prev = tm;
+	tmp->next->next = NULL;
+	tmp->next->prev = tmp;
 }
 
 /**
- * rotr - s
- * @stack: Double linked list
- * @line_number: File line execution
+ * rotr - rotates the stack to the bottom
+ * @stack: pointer to double linked list
+ * @line_number: file line for execution
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *temp;
 	(void) line_number;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return;
 
-	tmp = *stack;
-	while (tmp->next)
-		tmp = tmp->next;
+	temp = *stack;
+	while (temp->next)
+		temp = temp->next;
 
-	tmp->next = *stack;
-	tmp->prev->next = NULL;
-	tmp->prev = NULL;
+	temp->next = *stack;
+	temp->prev->next = NULL;
+	temp->prev = NULL;
 
-	(*stack)->prev = tmp;
-	*stack = tmp;
+	(*stack)->prev = temp;
+	*stack = temp;
 
 }
 
 /**
- * stack - s
- * @stack: Double linked list
- * @line_number: File line execution
+ * stack - sets the format of the data to a stack (LIFO)
+ * @stack: pointer to double linked list
+ * @line_number: file line for execution
  */
 void stack(stack_t **stack, unsigned int line_number)
 {
@@ -61,9 +61,9 @@ void stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * queue - s
- * @stack: Double linked list
- * @line_number: File line execution
+ * queue - sets the format of the data to a queue (FIFO)
+ * @stack: pointer to double linked list
+ * @line_number: file line for execution
  */
 void queue(stack_t **stack, unsigned int line_number)
 {
