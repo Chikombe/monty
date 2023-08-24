@@ -28,7 +28,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *temp = NULL, *tm = *stack;
 	char *numb;
 
-	numb = strtok(NULL, " \r\t\n");
+	numb = strtok(NULL, " \r\t\n ");
 	if (numb == NULL || (_isdigit(numb) != 0 && numb[0] != '-'))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
