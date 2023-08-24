@@ -25,9 +25,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -40,8 +40,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
@@ -70,8 +70,8 @@ extren vars var;
 
 int var_init(vars *var);
 instruction_t *create_new_func()
-int call_func(vars *var, char *opcode);
-void free_all(void);
+int execute_func(vars *var, char *opcode);
+void all_free(void);
 int _isdigit(char *str);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
