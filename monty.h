@@ -59,22 +59,20 @@ typedef struct glob_var
 	FILE *file_name;
 	char *buff;
 	size_t temp;
-	instruction_t *dict;
 	stack_t *head;
 	unsigned int line_number;
 	int MODE;
 } vars;
-
-
-extern vars var;
+extern vars var; /* here because of the typedef */
 
 int _isascii(int c);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int var_init(vars *var);
-instruction_t *create_new_func();
+int var_init(vars *var;
 int execute_func(vars *var, char *opcode);
 void all_free(void);
 int _isdigit(char *str);
+
+/* OPCODE HELPERS */
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
