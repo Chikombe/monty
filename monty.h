@@ -67,7 +67,7 @@ extern vars var; /* here because of the typedef */
 
 int _isascii(int c);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int var_init(vars *var;
+int var_init(vars *var);
 int execute_func(vars *var, char *opcode);
 void all_free(void);
 int _isdigit(char *str);
