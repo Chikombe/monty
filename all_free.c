@@ -10,7 +10,6 @@ void all_free(void)
 		free(var.buff);
 	if (var.file_name != NULL)
 		fclose(var.file_name);
-	free(var.dict);
 	if (var.head != NULL)
 	{
 		while (var.head->next != NULL)
