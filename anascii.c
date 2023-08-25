@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _isacii - checks if the supplied input is an ascii
+ * _isascii - checks if the supplied input is an ascii
  * @c: the integer to input
  * Return: on successb 1, otherwise 0
  */
