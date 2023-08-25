@@ -13,7 +13,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		all_free();
 		exit(EXIT_FAILURE);
 	}
-	if (_isascii((*stack)->n))
+	if (!_isascii((*stack)->n))
 	{
 		printf("%c\n", (*stack)->n);
 		return;
