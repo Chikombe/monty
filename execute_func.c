@@ -14,8 +14,10 @@ int execute_func(vars *var, char *opcode)
 
 	instruction_t ptr[] = {
 		{ "pall", pall}, { "push", push }, { "pint", pint },
-		{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
-		 { "div", divi }, {"mul", mul}, {"mod", mod}, {"pchar", pchar }, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},{"stack", stack}, {"queue", queue}
+		{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
+		{"sub", sub}, { "div", divi }, {"mul", mul}, {"mod", mod},
+		{"pchar", pchar }, {"pstr", pstr}, {"rotl", rotl},
+		{"rotr", rotr}, {"stack", stack}, {"queue", queue}
 	};
 
 	arrlen = sizeof(ptr) / sizeof(ptr[0]);
