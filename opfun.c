@@ -28,13 +28,8 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *temp = NULL, *tm = *stack;
 	char *num;
 
-<<<<<<< HEAD
 	num = strtok(NULL, " \r\t\n ");
 	if (num == NULL || (_isdigit(num) != 0 && num[0] != '-'))
-=======
-	numb = strtok(NULL, " \r\t\n ");
-	if (numb == NULL || (_isdigit(numb) != 0 && numb[0] != '-'))
->>>>>>> 839d072176320811087c68019ae380bd63331a82
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		all_free();
