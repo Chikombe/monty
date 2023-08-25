@@ -28,6 +28,8 @@ void swap(stack_t **stack, unsigned int line_number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
+	int result = 0;
+
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n",
@@ -35,8 +37,9 @@ void add(stack_t **stack, unsigned int line_number)
 		all_free();
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n = (*stack)->next->n + (*stack)->n;
+	result = (*stack)->n + (*stack)->next->n;
 	pop(stack, line_number);
+	(*stack)->n = result;
 }
 
 /**
@@ -46,15 +49,18 @@ void add(stack_t **stack, unsigned int line_number)
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
+	int result = 0;
+
 	if (!*stack || !(*stack)->next)
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n",
+		fprintf(stderr, "L%u: can't add, stack too short\n",
 			line_number);
 		all_free();
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n = (*stack)->next->n - (*stack)->n;
+	result =(*stack)->next->n - (*stack)->n;
 	pop(stack, line_number);
+	(*stack)->n = result;
 }
 
 /**
@@ -80,3 +86,4 @@ void divi(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = (*stack)->next->n / (*stack)->n;
 	pop(stack, line_number);
 }
+

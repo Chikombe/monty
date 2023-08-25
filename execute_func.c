@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <string.h>
 
 /**
  * execute_func - Calls and executes functions
@@ -8,14 +9,26 @@
  */
 int execute_func(vars *var, char *opcode)
 {
-	int i;
+	int i = 0;
+	int arrlen = 0;
 
-	for (i = 0; var->dict[i].opcode; i++)
-		if (strcmp(opcode, var->dict[i].opcode) == 0)
+	instruction_t ptr[] = {
+		{ "pall", pall}, { "push", push }, { "pint", pint },
+		{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+		 { "div", divi }, {"mul", mul}, {"mod", mod}, {"pchar", pchar }, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},{"stack", stack}, {"queue", queue}
+	};
+
+	arrlen = sizeof(ptr) / sizeof(ptr[0]);
+	while (ptr[i].opcode && i < arrlen)
+	{
+		if (strcmp(opcode, ptr[i].opcode) == 0)
 		{
-			if (!var->dict[i].f)
-				return (EXIT_SUCCESS);
+			ptr[i].f(&var->head, var->line_number);
+			return (EXIT_SUCCESS);
 		}
+		i++;
+	}
+
 	if (strlen(opcode) != 0 && opcode[0] != '#')
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
@@ -25,3 +38,4 @@ int execute_func(vars *var, char *opcode)
 
 	return (EXIT_SUCCESS);
 }
+

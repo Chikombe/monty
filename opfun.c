@@ -26,10 +26,10 @@ void pall(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL, *tm = *stack;
-	char *numb;
+	char *num;
 
-	numb = strtok(NULL, " \r\t\n");
-	if (numb == NULL || (_isdigit(numb) != 0 && numb[0] != '-'))
+	num = strtok(NULL, " \r\t\n ");
+	if (num == NULL || (_isdigit(num) != 0 && num[0] != '-'))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		all_free();
@@ -42,7 +42,7 @@ void push(stack_t **stack, unsigned int line_number)
 		all_free();
 		exit(EXIT_FAILURE);
 	}
-	temp->n = atoi(numb);
+	temp->n = atoi(num);
 	if (var.MODE == 0 || !*stack)
 	{
 		temp->next = *stack;
@@ -99,3 +99,4 @@ void pop(stack_t **stack, unsigned int line_number)
 		temp->next->prev = NULL;
 	free(temp);
 }
+
